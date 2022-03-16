@@ -2,11 +2,11 @@ import React from "react";
 import styles from "../../../styles/Home.module.css";
 import Head from "next/head";
 import MUIDataTable, { MUIDataTableOptions } from "mui-datatables";
-import { columnsCustom } from "../locations/components/columns";
-import { useLocations } from "../../hooks/useLocations";
+import { columnsCustom } from "./components/columns"
+import { useEpisodes } from "../../hooks/useEpisodes";
 
 const Episodes = () => {
-  const { locations } = useLocations();
+  const { episodes } = useEpisodes();
 
   const options: MUIDataTableOptions = {
     selectableRows: "none",
@@ -25,9 +25,9 @@ const Episodes = () => {
       </Head>
       <h1 className={styles.title}>Episodios</h1>
       <MUIDataTable
-        title={"Lista de Personajes"}
+        title={"Lista de Episodios"}
         columns={columnsCustom}
-        data={locations}
+        data={episodes}
         options={options}
       />
     </>

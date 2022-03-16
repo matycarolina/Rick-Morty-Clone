@@ -5,13 +5,13 @@ import { Location } from "../types/location";
 const getLocations = gql`
   query Locations {
     locations {
-        results {
-          id
-          name
-          type
-          dimension
-        }
+      results {
+        id
+        name
+        type
+        dimension
       }
+    }
   }
 `;
 
@@ -37,7 +37,9 @@ export const getLocationsService = async (): Promise<Location> => {
   };
 };
 
-export const getSingleLocationService = async (locationId: string): Promise<Location> => {
+export const getSingleLocationService = async (
+  locationId: string
+): Promise<Location> => {
   const data = await client.query({
     query: getSingleLocation,
     variables: { locationId },

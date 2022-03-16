@@ -10,7 +10,7 @@ export const columnsCustom = [
       sort: false,
       customBodyRender: (value: string) => {
         return (
-          <Link href={`/locations/${value}`}>
+          <Link href={`/episodes/${value}`}>
             <a>
               <Typography sx={{ textDecoration: "underline" }}>
                 {value}
@@ -33,8 +33,8 @@ export const columnsCustom = [
     },
   },
   {
-    name: "type",
-    label: "Tipo",
+    name: "air_date",
+    label: "Fecha de Emision",
     options: {
       filter: true,
       sort: false,
@@ -44,8 +44,8 @@ export const columnsCustom = [
     },
   },
   {
-    name: "dimension",
-    label: "Dimension",
+    name: "episode",
+    label: "Episodio",
     options: {
       filter: true,
       sort: false,
