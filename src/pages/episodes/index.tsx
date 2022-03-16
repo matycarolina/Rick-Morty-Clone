@@ -1,17 +1,9 @@
-import React from "react";
-import styles from "../../../styles/Modules.module.css";
-import Head from "next/head";
+import React from "react"
+import EpisodesPage from "../../screens/episodes";
 
 const Episodes = () => {
   return (
-    <>
-      <Head>
-        <title>Rick and Morty | Episodios</title>
-        <meta name="keywords" content="RickMorty" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <h1 className={styles.title}>Episodios</h1>
-    </>
+    <EpisodesPage/>
   );
 };
 
