@@ -5,9 +5,9 @@ import { useSingleLocation } from "../hooks/useLocations";
 
 const LocationDetails = () => {
   const router = useRouter();
-  const { id } = router.query;
+  const { locationId } = router.query;
 
-  const { location } = useSingleLocation(id as string);
+  const { location } = useSingleLocation(locationId as string);
 
   return (
     <div className={style.profile_card_container}>

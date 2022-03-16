@@ -5,9 +5,9 @@ import { useSingleCharacter } from "../hooks/useCharacters";
 
 const CharacterDetails = () => {
   const router = useRouter();
-  const { id } = router.query;
+  const { characterId } = router.query;
 
-  const { character } = useSingleCharacter(id as string);
+  const { character } = useSingleCharacter(characterId as string);
 
   return (
     <div className={style.profile_card_container}>

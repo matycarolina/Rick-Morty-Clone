@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { getLocationsService, getSingleLocationService } from "../services/locationServices";
 
 export const useLocations = () => {
