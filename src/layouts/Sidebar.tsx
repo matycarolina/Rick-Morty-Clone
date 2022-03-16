@@ -2,43 +2,53 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Nav, NavItem } from "reactstrap";
-import { Divider } from "@mui/material";
+import { Divider, Typography } from "@mui/material";
+import styles from "../../styles/Modules.module.css";
 
 const Sidebar = () => {
   return (
     <>
       <Nav vertical>
-        <NavItem>
+        <NavItem className={styles.image}>
           <Image
             src="/rickmorty-logo.png"
-            width={128}
-            height={77}
+            width={213}
+            height={82}
             alt="Rick and Morty logo"
           />
         </NavItem>
         <Divider />
-        <NavItem>
+        <NavItem className={styles.single}>
           <Link href="/">
-            <a>Home</a>
+            <a>
+              {" "}
+              <Typography> Home</Typography>
+            </a>
           </Link>
         </NavItem>
         <Divider />
-        <NavItem>
+        <NavItem className={styles.single}>
           {" "}
           <Link href="/characters">
-            <a>Personajes</a>
+            <a>
+              <Typography> Personajes</Typography>
+            </a>
           </Link>
         </NavItem>
         <Divider />
-        <NavItem>
+        <NavItem className={styles.single}>
           <Link href="/locations">
-            <a>Ubicaciones</a>
+            <a>
+              <Typography> Ubicaciones</Typography>
+            </a>
           </Link>
         </NavItem>
         <Divider />
-        <NavItem>
+        <NavItem className={styles.single}>
           <Link href="/episodes">
-            <a>Episodios</a>
+            <a>
+              <Typography> Episodios</Typography>
+            </a>
           </Link>
         </NavItem>
       </Nav>

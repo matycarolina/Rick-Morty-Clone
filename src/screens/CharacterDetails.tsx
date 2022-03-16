@@ -24,6 +24,9 @@ const CharacterDetails = () => {
         <p>
           {character.name}
         </p>
+        <p>
+          {character.location?.name} | <span>{character.location?.dimension}</span>
+        </p>
       </div>
       <div className={style.profile_stats}>
         <div>

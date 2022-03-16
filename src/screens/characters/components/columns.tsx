@@ -1,4 +1,4 @@
-import { Skeleton, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import Link from "next/link";
 
 export const columnsCustom = [
@@ -7,13 +7,15 @@ export const columnsCustom = [
     label: "ID",
     options: {
       filter: true,
-      sort: true,
+      sort: false,
       customBodyRender: (value: string) => {
         return (
           <Link href={`/characters/${value}`}>
-            <Typography variant="body2" sx={{ textDecoration: "underline" }}>
-              {value}
-            </Typography>
+            <a>
+              <Typography sx={{ textDecoration: "underline" }}>
+                {value}
+              </Typography>
+            </a>
           </Link>
         );
       },
@@ -24,7 +26,7 @@ export const columnsCustom = [
     label: "Nombre",
     options: {
       filter: true,
-      sort: true,
+      sort: false,
       customBodyRender: (value: string) => {
         return <Typography>{value}</Typography>;
       },
@@ -35,7 +37,7 @@ export const columnsCustom = [
     label: "Estado",
     options: {
       filter: true,
-      sort: true,
+      sort: false,
       customBodyRender: (value: string) => {
         return <Typography>{value}</Typography>;
       },
@@ -46,7 +48,7 @@ export const columnsCustom = [
     label: "Especie",
     options: {
       filter: true,
-      sort: true,
+      sort: false,
       customBodyRender: (value: string) => {
         return <Typography>{value}</Typography>;
       },
@@ -57,7 +59,7 @@ export const columnsCustom = [
     label: "Genero",
     options: {
       filter: true,
-      sort: true,
+      sort: false,
       customBodyRender: (value: string) => {
         return <Typography>{value}</Typography>;
       },
@@ -68,7 +70,7 @@ export const columnsCustom = [
     label: "Ubicacion actual",
     options: {
       filter: true,
-      sort: true,
+      sort: false,
       customBodyRender: (value: { name: string; dimension: string }) => {
         return <Typography>{value.name}</Typography>;
       },
@@ -79,7 +81,7 @@ export const columnsCustom = [
     label: "Dimension actual",
     options: {
       filter: true,
-      sort: true,
+      sort: false,
       customBodyRender: (value: { name: string; dimension: string }) => {
         return <Typography>{value.dimension}</Typography>;
       },

@@ -1,10 +1,10 @@
 import Sidebar from "./Sidebar";
 import { Grid } from "@mui/material";
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: any) => {
   return (
     <div>
-      <Grid container spacing={2}>
+      <Grid container spacing={3} >
         <Grid item lg={2}>
           <Sidebar />
         </Grid>

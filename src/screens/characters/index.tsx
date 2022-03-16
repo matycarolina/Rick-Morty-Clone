@@ -1,11 +1,8 @@
 import React from "react";
-import styles from "../../../styles/Modules.module.css";
+import styles from "../../../styles/Home.module.css";
 import Head from "next/head";
 import { useCharacters } from "../../hooks/useCharacters";
-import MUIDataTable, {
-  MUIDataTableOptions} from "mui-datatables";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Card } from "reactstrap";
+import MUIDataTable, { MUIDataTableOptions } from "mui-datatables";
 import { columnsCustom } from "./components/columns";
 
 const Characters = () => {
@@ -26,18 +23,14 @@ const Characters = () => {
         <meta name="keywords" content="RickMorty" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className={styles.title}>Personajes</h1>
       <div>
-        <Card className="shadow-none border-0 mb-0 rounded-0">
-          <div>
-            <MUIDataTable
-              title={"Lista de Personajes"}
-              columns={columnsCustom}
-              data={characters}
-              options={options}
-            />
-          </div>
-        </Card>
+        <h1 className={styles.title}>Personajes</h1>
+        <MUIDataTable
+          title={"Lista de Personajes"}
+          columns={columnsCustom}
+          data={characters}
+          options={options}
+        />
       </div>
     </>
   );

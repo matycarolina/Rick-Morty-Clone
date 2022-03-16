@@ -1,24 +1,5 @@
-.container {
-    width: 100vw;
-    height: 100vh;
-    /* minimum space between profile card container and screen border */
-    padding-left: 2.2rem;
-    padding-right: 2.2rem;
-    /* vertical centering */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  
-    background-image: url("/frontendmentor/challenge/profile-card-component/bg-pattern-top.svg"), url("/frontendmentor/challenge/profile-card-component/bg-pattern-bottom.svg");
-    background-repeat: no-repeat;
-    background-size: 100vw, 100vw;
-    background-position-x: -50vw, 50vw;
-    background-position-y: -50vw, calc(100vh - 100vw / 2);
-    background-color: var(--dark-cyan);
-  }
-  
+
   .profile_card_container {
-    width: 100%;
     /* fix the max-width because background image is not design to be repeat */
     max-width: 35rem;
     /* horizontal centering */
@@ -33,8 +14,8 @@
   
   .profile_image_container {
     --background-height: 14rem;
-    --image-height: 18rem;
-    --image-width: 18rem;
+    --image-height: 17rem;
+    --image-width: 17rem;
     --image-border-size: .5rem;
     height: calc(var(--background-height) + (var(--image-height) / 2) + (var(--image-border-size)));
   
@@ -64,32 +45,7 @@
     padding-bottom: 2.2rem;
     /* make divider with border bottom */
     border-bottom: .1rem solid hsl(0, 0%, 90%);
-  }
-  
-  .profile_description > * + * {
-    margin-top: 1.2rem;
-  }
-  
-  .profile_description > p {
     text-align: center;
-  }
-  
-  .profile_description > p:first-child {
-    font-weight: var(--weight-bold);
-  }
-  
-  .profile_description > p > span,
-  .profile_description > p:last-child {
-    font-weight: var(--weight-regular);
-    color: var(--dark-grayish-blue);
-  }
-  
-  .profile_description > p:last-child {
-    font-size: 1.4rem;
-  }
-  
-  .profile_description > p > span {
-    margin-left: .5rem;
   }
   
   
@@ -101,19 +57,4 @@
     display: flex;
     justify-content: space-between;
     text-align: center;
-  }
-  
-  .profile_stats > * {
-    flex-basis: 33%;
-  }
-  
-  .profile_stats > * > :first-child {
-    font-weight: var(--weight-bold);
-  }
-  
-  .profile_stats > * > :last-child {
-    margin-top: .7rem;
-    font-size: 1rem;
-    color: var(--dark-gray);
-    letter-spacing: .07rem;
   }
