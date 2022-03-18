@@ -1,7 +1,9 @@
 import React from "react";
 import style from "../../styles/Details.module.css";
+import styles from "../../styles/Home.module.css";
 import { useRouter } from "next/router";
 import { useSingleEpisode } from "../hooks/useEpisodes";
+import { Typography } from "@mui/material";
 
 const EpisodeDetails = () => {
   const router = useRouter();
@@ -10,21 +12,22 @@ const EpisodeDetails = () => {
   const { episode } = useSingleEpisode(episodeId as string);
 
   return (
-    <div className={style.profile_card_container}>
-      <div className={style.profile_description}>
-        <p>
-          {episode.name}
-        </p>
-      </div>
-      <div className={style.profile_stats}>
-        <div>
-          <p>Fecha de Emision: {episode.air_date}</p>
+    <>
+      <h1 className={styles.title}>Detalles del Episodio</h1>
+      <div className={style.profile_card_container}>
+        <div className={style.profile_description}>
+          <Typography variant="h4">{episode.name}</Typography>
         </div>
-        <div>
-          <p>Episodio: {episode.episode}</p>
+        <div className={style.profile_stats}>
+          <div>
+            <p>Fecha de Emision: {episode.air_date}</p>
+          </div>
+          <div>
+            <p>Episodio: {episode.episode}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
