@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   getCharactersService,
   getSingleCharacterService,
@@ -23,7 +23,7 @@ export const useSingleCharacter = (characterId: string) => {
 
   useEffect(() => {
     const getSingleCharacter = async () => {
-      const { data } = await getSingleCharacterService( characterId );
+      const { data } = await getSingleCharacterService(characterId);
       console.log(data);
       setCharacter(data);
     };

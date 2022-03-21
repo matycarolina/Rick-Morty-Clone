@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../../styles/Home.module.css";
 import Head from "next/head";
 import { useCharacters } from "../../hooks/useCharacters";
 import MUIDataTable, { MUIDataTableOptions } from "mui-datatables";
 import { columnsCustom } from "./components/columns";
+import ComboBox from "../../components/ComboBox";
+import { speciesOptions, statusOptions } from "./components/optionsCombo";
 
 const Characters = () => {
   const { characters } = useCharacters();
+  const [selected, setSelected] = useState();
+  const [selectedStatus, setSelectedStatus] = useState("");
+  const [selectedSpecies, setSelectedSpecies] = useState("");
+  const [cols, setCols] = useState(columnsCustom);
 
   const options: MUIDataTableOptions = {
     selectableRows: "none",
@@ -14,6 +20,35 @@ const Characters = () => {
     download: "false",
     filter: "false",
     print: "false",
+  };
+
+  const handleSelect: any = (value: any) => {
+    setSelected(value);
+    console.log(selected, "opcion sleccionada");
+  };
+
+  const onFilterSpecies: any = (value: any) => {
+    setSelectedSpecies(value);
+    const filteredCols = [...cols];
+    let filterList = [];
+    if (value !== "") {
+      filterList = [value];
+    }
+    // Target the column to filter on.
+    filteredCols[3].options.filterList = filterList;
+    setCols(filteredCols);
+  };
+
+  const onFilterStatus: any = (value: any) => {
+    setSelectedStatus(value);
+    const filteredCols = [...cols];
+    let filterList = [];
+    if (value !== "") {
+      filterList = [value];
+    }
+    // Target the column to filter on.
+    filteredCols[2].options.filterList = filterList;
+    setCols(filteredCols);
   };
 
   return (
@@ -25,9 +60,23 @@ const Characters = () => {
       </Head>
       <div>
         <h1 className={styles.title}>Personajes</h1>
+        <ComboBox
+          selectedOption={selected}
+          onSelect={handleSelect}
+          onFilter={onFilterSpecies}
+          options={speciesOptions}
+          label="Epecies"
+        />
+        <ComboBox
+          selectedOption={selected}
+          onSelect={handleSelect}
+          onFilter={onFilterStatus}
+          options={statusOptions}
+          label="Estado"
+        />
         <MUIDataTable
           title={"Lista de Personajes"}
-          columns={columnsCustom}
+          columns={cols}
           data={characters}
           options={options}
         />

@@ -2,7 +2,6 @@ import { gql } from "@apollo/client";
 import client from "../services/apollo-client";
 import { Character } from "../types/character";
 
-
 const getCharacters = gql`
   query Characters {
     characters {
@@ -50,7 +49,9 @@ export const getCharactersService = async (): Promise<Character> => {
   };
 };
 
-export const getSingleCharacterService = async (characterId: string): Promise<Character> => {
+export const getSingleCharacterService = async (
+  characterId: string
+): Promise<Character> => {
   const data = await client.query({
     query: getSingleCharacter,
     variables: { characterId },
