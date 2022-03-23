@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getEpisodesService, getSingleEpisodeService } from "../services/episodeServices";
+import { getEpisodesService, getSingleEpisodeService, getDatesService } from "../services/episodeServices";
 
 export const useEpisodes = () => {
   const [episodes, setEpisodes] = useState([]);
@@ -27,4 +27,18 @@ export const useSingleEpisode = (episodeId: string) => {
     getSingleEpisode();
   }, []);
   return { episode };
+};
+
+export const useEpisodesDates = () => {
+  const [dates, setDates] = useState([]);
+
+  useEffect(() => {
+    const getEpisodesDates = async () => {
+      const { data } = await getDatesService();
+      console.log(data);
+      setDates(data);
+    };
+    getEpisodesDates();
+  }, []);
+  return { dates };
 };

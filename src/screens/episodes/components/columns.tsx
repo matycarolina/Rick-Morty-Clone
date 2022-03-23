@@ -38,6 +38,7 @@ export const columnsCustom = [
     options: {
       filter: true,
       sort: false,
+      filterList: [],
       customBodyRender: (value: string) => {
         return <Typography>{value}</Typography>;
       },

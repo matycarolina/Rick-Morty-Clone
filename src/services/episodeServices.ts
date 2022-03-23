@@ -26,11 +26,20 @@ const getSingleEpisode = gql`
   }
 `;
 
+const getDates = gql `
+query Dates {
+  episodes {
+    results {
+      air_date
+    }
+  }
+}
+`
+
 export const getEpisodesService = async (): Promise<Episode> => {
   const data = await client.query({
     query: getEpisodes,
   });
-  console.log(data.loading, "aqui");
   return {
     loading: data.loading,
     data: data.data.episodes.results,
@@ -44,9 +53,18 @@ export const getSingleEpisodeService = async (
     query: getSingleEpisode,
     variables: { episodeId },
   });
-  console.log(data.loading, "indivi");
   return {
     loading: data.loading,
     data: data.data.episode,
+  };
+};
+
+export const getDatesService = async (): Promise<Episode> => {
+  const data = await client.query({
+    query: getDates,
+  });
+  return {
+    loading: data.loading,
+    data: data.data.episodes.results,
   };
 };

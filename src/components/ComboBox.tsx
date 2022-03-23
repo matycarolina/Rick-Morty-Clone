@@ -1,10 +1,9 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
 interface ComboBoxProps {
   options: string[];
-  selectedOption: any;
   onSelect: (value: any) => {};
   onFilter: (value: any) => {};
   label: string;
@@ -12,7 +11,6 @@ interface ComboBoxProps {
 
 const ComboBox: FC<ComboBoxProps> = ({
   options,
-  selectedOption,
   onSelect,
   onFilter,
   label,

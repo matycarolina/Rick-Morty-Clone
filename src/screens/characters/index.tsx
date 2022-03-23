@@ -30,7 +30,7 @@ const Characters = () => {
   const onFilterSpecies: any = (value: any) => {
     setSelectedSpecies(value);
     const filteredCols = [...cols];
-    let filterList = [];
+    let filterList: any = [];
     if (value !== "") {
       filterList = [value];
     }
@@ -42,7 +42,7 @@ const Characters = () => {
   const onFilterStatus: any = (value: any) => {
     setSelectedStatus(value);
     const filteredCols = [...cols];
-    let filterList = [];
+    let filterList: any = [];
     if (value !== "") {
       filterList = [value];
     }
@@ -61,19 +61,19 @@ const Characters = () => {
       <div>
         <h1 className={styles.title}>Personajes</h1>
         <ComboBox
-          selectedOption={selected}
           onSelect={handleSelect}
           onFilter={onFilterSpecies}
           options={speciesOptions}
           label="Epecies"
         />
+        <br />
         <ComboBox
-          selectedOption={selected}
           onSelect={handleSelect}
           onFilter={onFilterStatus}
           options={statusOptions}
           label="Estado"
         />
+        <br />
         <MUIDataTable
           title={"Lista de Personajes"}
           columns={cols}
