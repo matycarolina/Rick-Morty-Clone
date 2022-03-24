@@ -35,7 +35,6 @@ export const useEpisodesDates = () => {
   useEffect(() => {
     const getEpisodesDates = async () => {
       const { data } = await getDatesService();
-      console.log(data);
       setDates(data);
     };
     getEpisodesDates();
